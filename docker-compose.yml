@@ -1,23 +1,23 @@
 version: '3.0'
 services:
   eureka:
-    image: fzm-tcm-eureka
+    image: eureka_server
     restart: always
     tty: true
-    container_name: fzm-tcm-eureka
+    container_name: eureka_server
     environment:
     - TZ=Asia/Shanghai
     ports:
-    - "1111:1111"
+    - "8761:8761"
   service:
-    image: fzm-tcm-front
+    image: service_a
     restart: always
     tty: true
-    container_name: fzm-tcm-front
+    container_name: service_a
     environment:
     - TZ=Asia/Shanghai
     ports:
-    - "8008:8008"
+    - "7901:7901"
     volumes:
-    - ${HOME}/fzm-tcm/fzm-tcm-front/logs:${HOME}/logs
+    - ${HOME}/springcloud-demo/service/logs:${HOME}/logs
 
