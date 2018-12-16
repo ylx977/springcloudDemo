@@ -25,6 +25,7 @@
         <project.build.sourceEncoding>utf-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>utf-8</project.reporting.outputEncoding>
         <java.verson>1.8</java.verson>
+        <skipTests>true</skipTests> <!--子包也继承这个规则，打包不需要运行后再打包-->
     </properties>
 
     <dependencyManagement>
