@@ -7,7 +7,8 @@ eureka:
     register-with-eureka: false
     fetch-registry: false
     service-url:
-      defaultZone: http://${EUREKA_HOST:localhost}:${eureka.port:8761}/eureka/
+#      eureka.host的值获取不到就取localhost,在eureka上显示的是本机的ip地址
+      defaultZone: http://${eureka.host:localhost}:${eureka.port:8761}/eureka/
 #      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
 #      defaultZone: http://eureka-server:${server.port}/eureka/
   server:
