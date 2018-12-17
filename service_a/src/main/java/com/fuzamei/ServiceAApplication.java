@@ -22,10 +22,24 @@ public class ServiceAApplication {
 
 	@Value("${test.param}")
 	private String param;
+	@Value("${eureka.instance.instance-id}")
+	private String instanceId;
+//	@Value("${eureka.instance.ip-address}")
+//	private String ipaddress;
+	@Value("${eureka.client.service-url.defaultZone}")
+	private String defaultZone;
 
 	@RequestMapping("/test")
 	public String test(){
 		return "this is a microservice-a test {"+param+"}";
+	}
+	@RequestMapping("/defaultZone")
+	public String getDefaultzone(){
+		return "defaultZone: {"+defaultZone+"}";
+	}
+	@RequestMapping("/address")
+	public String ipaddress(){
+		return "instanceId {"+instanceId+"}";
 	}
 
 	@RequestMapping("/logTest")
