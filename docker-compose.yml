@@ -9,6 +9,7 @@ services:
     - TZ=Asia/Shanghai
     - EUREKA_INSTANCE_IP-ADDRESS=172.16.100.31
     - EUREKA_HOST=172.16.100.31
+    - EUREKA_PORT=8761
     ports:
     - "8761:8761"
   service:
@@ -20,6 +21,7 @@ services:
     - TZ=Asia/Shanghai
     - EUREKA_INSTANCE_IP-ADDRESS=172.16.100.31
     - EUREKA_HOST=172.16.100.31
+    - EUREKA_PORT=8761
     ports:
     - "7901:7901"
     volumes:
